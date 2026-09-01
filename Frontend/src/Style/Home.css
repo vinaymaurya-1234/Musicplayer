@@ -1,0 +1,73 @@
+/* Full Page Background */
+
+.home-container {
+  min-height: 100vh;
+  background: #0f172a;
+  padding: 40px;
+  color: white;
+}
+
+/* Page Heading */
+
+.home-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* Songs Grid Layout */
+
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+}
+
+/* Song Card */
+
+.music-card {
+  background: #020617;
+  border-radius: 15px;
+  padding: 15px;
+  transition: 0.3s ease;
+}
+
+/* Hover Effect */
+
+.music-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Thumbnail */
+
+.music-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Song Title */
+
+.music-card h3 {
+  margin: 12px 0;
+  font-size: 18px;
+}
+
+/* Audio Player */
+
+.music-card audio {
+  width: 100%;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 20px;
+  }
+
+  .home-title {
+    font-size: 22px;
+  }
+}

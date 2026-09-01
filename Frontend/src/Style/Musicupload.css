@@ -1,0 +1,62 @@
+.Upload-Container{
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.25);
+    gap: 15px;
+    margin-right: 18px;
+    width: 90%;
+    max-width: 320px;
+    padding: 50px;
+    border-radius: 13px;
+}
+
+.music-box{
+
+    border: 2px solid white;
+    color: white;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.title-input{
+
+    height: 35px;
+    width: 100%;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.submit-btn{
+
+    background-color: aqua;
+    height: 35px;
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover{
+
+    background: white;
+    color: #1f2560;
+}
+
+
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

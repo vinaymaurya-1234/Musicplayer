@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+    padding: 0;
+background: linear-gradient(135deg, #0f3443, #34e89e);
+height: 100vh;
+background-attachment: fixed;
+}
+
+
+.main-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}

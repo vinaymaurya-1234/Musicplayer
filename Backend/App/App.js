@@ -1,0 +1,29 @@
+const express = require("express");
+const authRoutes = require('../src/routes/auth.routes');
+const MusicRoutes = require('../src/routes/music.routes');
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
+
+
+const app = express();
+
+app.use(express.json());
+app.use(cookieParser());
+
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true
+  })
+);
+app.use('/api/auth', authRoutes);
+app.use('/api/music', MusicRoutes);
+app.use('/api/album', MusicRoutes);
+
+
+// app.get("/", (req, res) => {
+//     res.send("Server working");
+// });
+
+
+module.exports = app;
