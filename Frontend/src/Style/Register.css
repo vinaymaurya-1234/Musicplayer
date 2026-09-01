@@ -198,16 +198,20 @@
 
 .input-wrapper input {
   width: 100%;
-  height: 100%;
+  height: 54px;
+  padding: 0;
+  margin: 0;
   border: none;
   outline: none;
   background: transparent;
   color: white;
   font-size: 14px;
+  line-height: 54px;
 }
 
 .input-wrapper input::placeholder {
   color: #555b62;
+  opacity: 1;
 }
 
 /* Password */
@@ -365,127 +369,128 @@
 }
 
 @media (max-width: 800px) {
+  .register-brand-section {
+    display: none;
+  }
 
-    .register-brand-section {
-        display: none;
-    }
+  .register-form-section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 18px 14px;
+    align-items: center;
+  }
 
-    .register-form-section {
-        width: 100%;
-        min-height: 100vh;
-        padding: 18px 14px;
-        align-items: center;
-    }
+  .register-card {
+    max-width: 430px;
+  }
 
-    .register-card {
-        max-width: 430px;
-    }
+  .mobile-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 20px;
+  }
 
-    .mobile-logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 9px;
-        margin-bottom: 20px;
-    }
+  .mobile-logo .brand-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 19px;
+  }
 
-    .mobile-logo .brand-icon {
-        width: 36px;
-        height: 36px;
-        font-size: 19px;
-    }
+  .mobile-logo span {
+    font-size: 18px;
+    font-weight: bold;
+  }
 
-    .mobile-logo span {
-        font-size: 18px;
-        font-weight: bold;
-    }
+  .register-heading {
+    margin-bottom: 20px;
+  }
 
-    .register-heading {
-        margin-bottom: 20px;
-    }
+  .heading-label {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
 
-    .heading-label {
-        font-size: 9px;
-        letter-spacing: 1.5px;
-    }
+  .register-heading h1 {
+    margin: 8px 0 5px;
+    font-size: 29px;
+  }
 
-    .register-heading h1 {
-        margin: 8px 0 5px;
-        font-size: 29px;
-    }
+  .register-heading p {
+    font-size: 12px;
+  }
 
-    .register-heading p {
-        font-size: 12px;
-    }
+  .form-group {
+    margin-bottom: 12px;
+  }
 
-    .form-group {
-        margin-bottom: 12px;
-    }
+  .form-group > label {
+    margin-bottom: 5px;
+    font-size: 11px;
+  }
 
-    .form-group > label {
-        margin-bottom: 5px;
-        font-size: 11px;
-    }
+  .input-wrapper {
+    height: 45px;
+    padding: 0 13px;
+    border-radius: 8px;
+  }
 
-    .input-wrapper {
-        height: 45px;
-        padding: 0 13px;
-        border-radius: 8px;
-    }
+  .input-wrapper input {
+    height: auto;
+    font-size: 13px;
+    line-height: 1.2;
+  }
 
-    .input-wrapper input {
-        font-size: 13px;
-    }
+  .role-options {
+    flex-direction: row;
+    gap: 8px;
+  }
 
-    .role-options {
-        flex-direction: row;
-        gap: 8px;
-    }
+  .role-card {
+    min-height: 65px;
+    padding: 9px;
+    gap: 7px;
+    border-radius: 8px;
+  }
 
-    .role-card {
-        min-height: 65px;
-        padding: 9px;
-        gap: 7px;
-        border-radius: 8px;
-    }
+  .role-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
 
-    .role-icon {
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
-    }
+  .role-info strong {
+    font-size: 10px;
+  }
 
-    .role-info strong {
-        font-size: 10px;
-    }
+  .role-info span {
+    font-size: 7px;
+    margin-top: 2px;
+  }
 
-    .role-info span {
-        font-size: 7px;
-        margin-top: 2px;
-    }
+  .role-radio {
+    width: 11px;
+    height: 11px;
+  }
 
-    .role-radio {
-        width: 11px;
-        height: 11px;
-    }
+  .role-selected .role-radio {
+    border-width: 3px;
+  }
 
-    .role-selected .role-radio {
-        border-width: 3px;
-    }
+  .register-button {
+    height: 45px;
+    margin-top: 5px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
 
-    .register-button {
-        height: 45px;
-        margin-top: 5px;
-        font-size: 12px;
-        border-radius: 8px;
-    }
+  .login-link {
+    margin-top: 12px;
+    font-size: 11px;
+  }
 
-    .login-link {
-        margin-top: 12px;
-        font-size: 11px;
-    }
-
-    .terms-text {
-        display: none;
-    }
+  .terms-text {
+    display: none;
+  }
 }
