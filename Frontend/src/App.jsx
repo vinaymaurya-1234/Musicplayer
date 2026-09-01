@@ -3,7 +3,7 @@ import Navbar from "./Pages/Navbar.jsx";
 import Register from "./Pages/Register.jsx";
 import Login from "./Pages/Login.jsx";
 import UploadMusic from "./Pages/Musicupload.jsx";
-import AllMusic from "./Pages/Allmusic.jsx";
+import Home from "./Pages/Home.jsx";
 import "./Style/App.css";
 
 
@@ -24,7 +24,7 @@ function AppContent() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/upload" element={<UploadMusic />} />
-        <Route path="/home" element={<AllMusic />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </>
   );

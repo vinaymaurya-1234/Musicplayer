@@ -1,57 +1,72 @@
 const jwt = require("jsonwebtoken");
 const MusicSchema = require("../models/music.model");
 const { uploadFile } = require("../service/storage.service");
+
 require("dotenv").config();
 
 async function CreateMusic(req, res) {
   const title = req.body.title;
-  // console.log(title,"aaa");
   const token = req.cookies.token;
-  // console.log(req.file);
-
-  // console.log("FILE RECEIVED:", req.file);
 
   if (!token) {
-    console.log(token);
-    return res.status(400).json({ message: "Restrected" });
+    return res.status(400).json({
+      message: "Restricted",
+    });
   }
 
   let verifiedtoken;
 
   try {
-    const decoded = await jwt.verify(token, process.env.JWT_SECRET_KEY);
-    verifiedtoken = decoded;
+    verifiedtoken = jwt.verify(token, process.env.JWT_SECRET_KEY);
   } catch (err) {
-    return res.status(400).json({ message: "Invalid token" });
+    return res.status(400).json({
+      message: "Invalid token",
+    });
   }
 
-  console.log(verifiedtoken,"123");
-  if (verifiedtoken.role != "artist") {
-    return res
-      .status(404)
-      .json({ message: "Forbidden, you are not an artist." });
+  if (verifiedtoken.role !== "artist") {
+    return res.status(403).json({
+      message: "Forbidden, you are not an artist.",
+    });
   }
 
-   if (!req.file) {
-  return res.status(400).json({
-    message: "Music file required"
-  });
-}
+  const musicFile = req.files?.music?.[0];
+  const thumbnailFile = req.files?.thumbnail?.[0];
 
-  const musiclink = await uploadFile(req.file);
+  if (!musicFile) {
+    return res.status(400).json({
+      message: "Music file required",
+    });
+  }
 
- 
-  const uri = musiclink.url;
-  // console.log(musiclink,"333");
-  // console.log(uri,"444");
+  try {
+    const musicUpload = await uploadFile(musicFile);
 
-  const music = await MusicSchema.create({
-    title,
-    uri,
-    artist:verifiedtoken.id
-  })
+    let thumbnail = "";
 
-  return res.status(200).json({ message: "Login as artist." });
+    if (thumbnailFile) {
+      const imageUpload = await uploadFile(thumbnailFile);
+      thumbnail = imageUpload.url;
+    }
+
+    const music = await MusicSchema.create({
+      title,
+      uri: musicUpload.url,
+      thumbnail,
+      artist: verifiedtoken.id,
+    });
+
+    return res.status(200).json({
+      message: "Music uploaded successfully.",
+      music,
+    });
+  } catch (err) {
+    console.log("Upload error:", err);
+
+    return res.status(500).json({
+      message: "Music upload failed",
+    });
+  }
 }
 
 module.exports = { CreateMusic };

@@ -12,3 +12,13 @@ background-attachment: fixed;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  /* background: #080a0d; */
+  color: white;
+}
