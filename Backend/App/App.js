@@ -6,15 +6,13 @@ const cors = require("cors");
 
 const app = express();
 
+const corsOptions = {
+  origin: "https://musicplayer-coral-two.vercel.app",
+  credentials: true,
+};
+
 app.use(express.json());
 app.use(cookieParser());
-
-app.use(
-  cors({
-    origin: "https://musicplayer-coral-two.vercel.app",
-    credentials: true,
-  })
-);
 
 app.use(cors(corsOptions));
 app.options(/.*/, cors(corsOptions));
