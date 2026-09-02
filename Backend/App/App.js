@@ -1,9 +1,8 @@
 const express = require("express");
-const authRoutes = require('../src/routes/auth.routes');
-const MusicRoutes = require('../src/routes/music.routes');
+const authRoutes = require("../src/routes/auth.routes");
+const MusicRoutes = require("../src/routes/music.routes");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-
 
 const app = express();
 
@@ -13,17 +12,12 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: "https://musicplayer-coral-two.vercel.app",
-    credentials: true
+    credentials: true,
   })
 );
-app.use('/api/auth', authRoutes);
-app.use('/api/music', MusicRoutes);
-app.use('/api/album', MusicRoutes);
 
-
-// app.get("/", (req, res) => {
-//     res.send("Server working");
-// });
-
+app.use("/api/auth", authRoutes);
+app.use("/api/music", MusicRoutes);
+app.use("/api/album", MusicRoutes);
 
 module.exports = app;
