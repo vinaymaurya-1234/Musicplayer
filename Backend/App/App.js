@@ -16,6 +16,12 @@ app.use(
   })
 );
 
+app.use((req, res, next) => {
+  console.log("REQUEST:", req.method, req.originalUrl);
+  console.log("ORIGIN:", req.headers.origin);
+  next();
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/music", MusicRoutes);
 app.use("/api/album", MusicRoutes);
