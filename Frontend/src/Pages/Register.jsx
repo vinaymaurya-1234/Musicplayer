@@ -16,7 +16,7 @@ const Register = () => {
     try {
       setError("");
 
-      await axios.post("http://localhost:3000/api/auth/register", {
+      await axios.post("https://musicplayer-ow9.onrender.com/api/auth/register", {
         username: name,
         email,
         password,

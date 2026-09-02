@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import "../Style/Home.css";
 
-const API = "http://localhost:3000";
+const API = "https://musicplayer-ow9.onrender.com";
 
 const mediaUrl = (url) => {
   if (!url) return "";

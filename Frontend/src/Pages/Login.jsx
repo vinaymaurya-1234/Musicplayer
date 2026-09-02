@@ -11,7 +11,7 @@ const Login = () => {
   const Details = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/auth/login",
+        "https://musicplayer-orw9.onrender.com/api/auth/login",
         { identifier, password },
         { withCredentials: true },
       );

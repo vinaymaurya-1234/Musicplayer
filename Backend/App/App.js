@@ -12,7 +12,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://musicplayer-coral-two.vercel.app",
     credentials: true
   })
 );

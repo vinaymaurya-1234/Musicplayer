@@ -9,7 +9,7 @@ function AllMusic() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/api/music/Playall")
+      .get("https://musicplayer-owv9.onrender.com/api/music/Playall")
       .then(res => {
         setSongs(res.data.musics);
       });
