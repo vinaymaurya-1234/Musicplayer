@@ -24,7 +24,7 @@ const UploadMusic = () => {
 
     try {
       const res = await axios.post(
-        "https://musicplayer-ow9.onrender.com/api/music/upload",
+        "https://musicplayer-1-hc8h.onrender.com/api/music/upload",
         formData,
         {
           withCredentials: true,
