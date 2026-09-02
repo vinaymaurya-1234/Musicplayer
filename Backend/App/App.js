@@ -16,6 +16,16 @@ app.use(
   })
 );
 
+app.use(cors(corsOptions));
+app.options(/.*/, cors(corsOptions));
+
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "Musicplayer backend is running",
+  });
+});
+
 app.use((req, res, next) => {
   console.log("REQUEST:", req.method, req.originalUrl);
   console.log("ORIGIN:", req.headers.origin);
