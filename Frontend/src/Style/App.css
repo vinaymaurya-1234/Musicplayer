@@ -1,6 +1,1 @@
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
-}
+.app-shell{min-height:100vh;background:#07100c;color:#f4fff7}.app-shell main{min-height:calc(100vh - 76px)}
